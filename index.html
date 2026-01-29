@@ -7,22 +7,25 @@
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<meta property="og:title" content="Cliconline Studios"/>
-	<meta content="https://1.bp.blogspot.com/-grfBQMHbt8k/YIA8QuhjKcI/AAAAAAAAELU/YKjjMqMKdXk2w2BkYWdwlIHwuyUnSorOgCLcBGAsYHQ/w1200-h630-p-k-no-nu/CLICONLNEpt.png" property="og:image">
-	<meta property="og:image" content="https://res.cloudinary.com/cliconline/image/upload/v1615508887/CliconlineStudios/clic_ymrqgo.png"/>
-	<meta property="og:description" content="Comprar Tarjeta Digital "/>
-	<meta property="og:url" content="https://cliconlinestudios.blogspot.com"/>
+	<meta property="og:title" content="Rifa Digital"/>
+	<meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioVsWLEfWWCrJKHwGvZZUb2XizuHc0brYnMgA9R-bHD85zjplyKjNDTCHABVtkDOW57z1Bmedln06udJb0QfxIPAebVtV0HPBIREcgD8YRqx02eSSV0CsMTioINpA9zELCgM1gJsDJknLqXryKdtr-ZEtHyvB7CPP_GNt-KEELbtV1uC9Pesu7xc0v4cE0/s320/rifa.png" property="og:image">
+	<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioVsWLEfWWCrJKHwGvZZUb2XizuHc0brYnMgA9R-bHD85zjplyKjNDTCHABVtkDOW57z1Bmedln06udJb0QfxIPAebVtV0HPBIREcgD8YRqx02eSSV0CsMTioINpA9zELCgM1gJsDJknLqXryKdtr-ZEtHyvB7CPP_GNt-KEELbtV1uC9Pesu7xc0v4cE0/s320/rifa.png"/>
+	<meta property="og:description" content="Rifa Digital"/>
+	<meta property="og:url" content="https://rifasdigitales.blogspot.com"/>
+
 	
-	<title>Comprar Tarjeta Digital</title>
+	<title>Rifa Solidaria</title>
 </head>
 <body>
 	<div class="sidebar"><a class="menu1" id="sidebar" href="javascript:sidebar()"><span class="fa fa-bars"></span ></a>
 		<br>
 	<div class="side" id="side">
 	
-<a href="index.html">Inicio</a>
+<a href="https://rifasdigitales.blogspot.com/p/premios.html">Premios</a>
 
-<a href="eventos.html">Eventos</a>
+<a href="https://rifasdigitales.blogspot.com/p/sorteo.html">Sorteo</a>
+
+<a href="https://docs.google.com/spreadsheets/d/1kelLsWiA2D1cHE07BDH6pIR98TVzyeCGWZxUNV8doDM/edit?usp=sharing">Registrados</a>
 		
 <a href="javascript:cerrarside()">Cerrar</a>
    </div>
@@ -32,27 +35,18 @@
 	 
 	 <section class="tarjeta" id="tarjeta"> 
 	
-			 <!-- banner -->
 
-		 <div class="banner" >
-		
-			<img class="portada" src="img/b11-01.png" alt="">
-
-			
-		 </div>
-	 <br>
-
- <!-- screen 4  -->
+ <!-- registro 4  -->
 
  <section class="store" id="store">
 
 	<form action="" class="formulario">
-		<img src="img/click.png" class="imgLogo" />
+		<img src="img/clicknet.png" class="imgLogo" />
   
-		<h1 class="formulario__titulo">Cotizar Activo Digital</h1>
+		<h1 class="formulario__titulo">RIFA SOLIDARIA</h1>
 		
 		<p class="formulario__parrafo">
-			Tarjeta Digital,Pagina Web,Watchfaces y más.
+			Registro.
 		</p>
   <br>
 		<label for="cliente" class="formulario__label">Nombre y Apellido</label>
@@ -60,34 +54,38 @@
 		  id="cliente"
 		  type="text"
 		  class="formulario__input"
-		  placeholder="Ingresa tu nombre"
+		  placeholder="Ingresa el nombre"
 		/>
   
-		<label for="empleado" class="formulario__label"
-		  >Preguntar por</label
-		>
-		<select id="modulos" name="listamodulos" class="formulario__input">
-			<option>Tarjeta Digital</option>
-			<option>Pagina Web</option>
-			<option>Video Publicitario</option>
-			<option>Diseño Grafico</option>
-			<option>Watchface WearOS</option>
-			<option>Wallpaper Live</option>
-		</select>
-		
-		<label for="empleado" class="formulario__label"
-		>cantidad </label>
+	<label for="Celular" class="formulario__label">Celular</label>
+		<input
+		  id="Celular"
+		  type="number"
+		  class="formulario__input"
+		  placeholder="Numero Celular"
+		/>
 	
-		<select id="modulos2" name="listamodulos" class="formulario__input">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-		  </select>
+		
+		<label for="boleto" class="formulario__label">Boleto</label>
+		<input
+		  id="boleto"
+		  type="number"
+		  class="formulario__input"
+		  placeholder="Numero de boleto"
+		/>
+		
+		<label for="admin" class="formulario__label">Admintrador</label>
+		<input
+		  id="admin"
+		  type="password"
+		  class="formulario__input"
+		  placeholder="Código de Verificación"
+		  utocomplete="off"
+		/>
 
 
-		<button id="submit" class="formulario__submit">Enviar a Whatsapp</button>
+
+		<button id="submit" class="formulario__submit">Generar Boleto</button>
 
 		<div id="respuesta"></div>
   
@@ -101,20 +99,23 @@
 </section>
 	
 		
+<div id="boletoDigital">
+  <h2>Talonario Boleto Digital</h2>
+  <h1>Rifa Solidaria</h1>
+  <p>Nombre: <span id="bCliente"></span></p>
+  <p>Celular: <span id="bCelular"></span></p>
+  <p>BOLETO: <span id="bBoleto"></span></p>
+  <img src="img/qr-code.png" class="qrpremio" />
+    <p style="font-size: 10px;">Scan Premios y Sorteo</p>
+
+</div>
 
 			  
 
 
 
 
- <!-- redes sociales  -->
-		<section class="redes-sociales" id="redes">
-			<a href="https://api.whatsapp.com/send?phone=593998968077"  class="whatsapp" target="black" ><span class="fa fa-whatsapp"></span ></a>
-			<a href="https://www.facebook.com/cliconlineStudios/"  class="facebook" target="black" ><span class="fa fa-facebook"></span></a>
-			<a href="https://www.instagram.com/cliconlinestudios/" class="instagram" target="black" ><span class="fa fa-instagram"></span></a>
-			<a href="tel:0998968077" class="phone"><span class="fa fa-phone"></span></a>
-			
-		</section>
+ 
 
 		<footer>
 		
@@ -129,12 +130,19 @@
  </div>
 
 
+
+
 	
 			
      </body>
 
 
 	<script src="js/formulario.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
 
 
 

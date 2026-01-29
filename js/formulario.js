@@ -1,42 +1,65 @@
 document.querySelector("#submit").addEventListener("click", e => {
-    e.preventDefault();
-  
-    //INGRESE UN NUMEROS DE WHATSAPP VALIDOS AQUI:
-    let cuenta = "https://deuna.onelink.me/H92p/bc99d0ae?token=7C1F07A144AD1CAB9C6119376B289266830AB021";
-  
-    let cliente = document.querySelector("#cliente").value;
-    let modulos = document.querySelector("#modulos").value;
-    let Cantidad = document.querySelector("#modulos2").value;
-    let resp = document.querySelector("#respuesta");
-  
-    resp.classList.remove("fail");
-    resp.classList.remove("send");
-  
-    let url = `https://api.whatsapp.com/send?phone=593959907464&text=
-          *Activo Digital*%0A
-          *Datos de Usuario*%0A
-          *Nombre*%0A
-          ${cliente}%0A
-          *Cotizar*%0A
-          ${modulos}%0A
-          *Cantidad*%0A
-          ${Cantidad}%0A`;
-          
+  e.preventDefault();
 
+  const CLAVE_ADMIN = "720267";
   
-    if (cliente === "") {
-      resp.classList.add("fail");
-      resp.innerHTML = `Espera, ${cliente} faltan algunos Datos `;
-      return false;
-    }
-    resp.classList.remove("fail");
-    resp.classList.add("send");
-    resp.classList.remove("pagok");
-    resp.classList.add("pagook");
-    resp.innerHTML = `Tu Cotización se Envio, ${cliente}`;
+  let inputCliente = document.querySelector("#cliente");
+  let inputCelular = document.querySelector("#Celular");
+  let inputBoleto = document.querySelector("#boleto");
+  let inputAdmin = document.querySelector("#admin");
+
+  let cliente = inputCliente.value;
+  let Celular = inputCelular.value;
+  let boleto = inputBoleto.value;
+  let admin = inputAdmin.value;
+
+  // 🔴 VALIDACIONES RÁPIDAS
+  if (cliente === "" || Celular === "" || boleto === "") {
+    Swal.fire({ icon: "warning", title: "Campos incompletos", text: "Llena todos los datos." });
+    return false;
+  }
+
+  if (admin !== CLAVE_ADMIN) {
+    Swal.fire({ icon: "error", title: "Clave incorrecta", text: "Verifica el código de admin." });
+    return false;
+  }
+
+  // ✅ PREPARACIÓN DE DATOS Y ENVÍO A GOOGLE (Silencioso)
+  let url = `https://docs.google.com/forms/d/e/1FAIpQLScqdqd4cdwl2NHNJC42mRRJn1ZXU4GFiN5wrsIL4WgZax_W1w/formResponse?entry.62078474=${encodeURIComponent(cliente)}&entry.384469547=${encodeURIComponent(Celular)}&entry.1968066278=${encodeURIComponent(boleto)}&submit=Submit`;
   
-    window.open(url);
+  fetch(url, { method: "POST", mode: "no-cors" });
+
+  // Rellenar datos en el diseño del boleto
+  document.querySelector("#bCliente").innerText = cliente;
+  document.querySelector("#bCelular").innerText = Celular;
+  document.querySelector("#bBoleto").innerText = boleto;
+  inputAdmin.value = "";
+
+  // 📸 PROCESO DE CAPTURA
+  html2canvas(document.querySelector("#boletoDigital")).then(canvas => {
+    // 1. Ejecutar descarga inmediatamente
+    let link = document.createElement("a");
+    link.download = `boleto-${cliente}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+    
+    // 2. ⏳ ESPERAR 3 SEGUNDOS ANTES DE MOSTRAR LA ALERTA
+    setTimeout(() => {
+      Swal.fire({
+        title: "¡Boleto Generado!",
+        text: `El comprobante de ${cliente} se descargó correctamente.`,
+        icon: "success",
+        draggable: true
+      });
+
+      // 3. Limpiar Formulario
+      inputCliente.value = "";
+      inputCelular.value = "";
+      inputBoleto.value = "";
+      inputAdmin.value = "";
+    }, 1000); // <--- Aquí están los 3000ms (3 segundos)
   });
+});
 
            //    menu laterl 
 
